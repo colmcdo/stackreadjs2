@@ -152,10 +152,22 @@
         //adding the feature layer to the map
         map.add(airportLayer);
 
+   // Change the symbol for your myAirports layer to an icon.
+        //setting up the icon
+        const airportRenderer2 = {
+        "type": "simple",
+        "symbol": {
+          "type": "picture-marker",
+          "url": "outline_place_black_24dp.png",
+          "width": "18px",
+          "height": "18px"
+        }
+      }
         
        //adding the const for the feature layer
       const myAirports = new FeatureLayer({
       url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/My_Airports_cmm/FeatureServer",
+      renderer: airportRenderer2,
  
         //adding the popup here
       outFields: ["AirportCode"],});
@@ -163,16 +175,14 @@
         //adding the feature layer to the map
       map.add(myAirports);
 
-      // Change the symbol for your myAirport layer to an icon 
-      const myAirportsRenderer = {
-        "type": "simple",
-        "symbol": {
-          "type": "picture-marker",
-          "url": "http://static.arcgis.com/images/Symbols/NPS/npsPictograph_0231b.png",
-          "width": "18px",
-          "height": "18px"
-        }
-      }
+
+   
+      
+
+
+
+
+      // Add a label to your myAirport showing the Airport code.
 
       
  
