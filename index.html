@@ -46,7 +46,7 @@
         const graphicsLayer = new GraphicsLayer();
         map.add(graphicsLayer);
 
-        //defining the geomeotry of the point
+        //defining the geometry of the point
         const point = { //Create a point
           type: "point",
           longitude: -97.750689,    //long lat of Stevie Ray Vaughan Statue
@@ -162,12 +162,16 @@
 
         //adding the feature layer to the map
       map.add(myAirports);
+
+      // Change the symbol for your myAirport layer to an icon
+      const myAirportRenderer = {symbol: { type: "picture-marker", url: "https://sounny.github.io/agol/outline_local_airport_black_24dp.png", width: "18px", height: "18px" }};
+      
  
-        // Set the point layer's LayerInfo
+        // Set the point layer's LayerInfo (it means: the only layer we want to be editable is myAirports)
         const pointInfos = {
         layer: myAirports
         }
-        //(it means: the only layer we want to edit is myAirports)
+        
         // Begin Editor constructor
         const editor = new Editor({
         view: view,
