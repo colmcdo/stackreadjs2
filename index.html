@@ -165,7 +165,8 @@
 
       // Change the symbol for your myAirport layer to an icon
       const myAirportRenderer = {symbol: { type: "picture-marker", url: "outline_local_airport_black_24dp.png", width: "18px", height: "18px" }};
-
+      myAirports.renderer = myAirportRenderer;  // Set the renderer for the myAirports layer  
+          
  
         // Set the point layer's LayerInfo (it means: the only layer we want to be editable is myAirports)
         const pointInfos = {
